@@ -8,107 +8,62 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
+    ScrollView,
+    ImageBackground,
+    View,
+    Text,
+    Image,
+    TouchableOpacity,
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import homeStyle from './home.style';
 
 function Home() {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
+    return (
+        <View style={homeStyle.background}>
+            <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
+                <Text style={homeStyle.titleText}>Be informed on the best ways to protect yourself from Corona virus</Text>
+                <ScrollView style={homeStyle.cardScrollSection}>
+                    <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.singleItem()}>
+                        <View style={homeStyle.cardLeftSide}>
+                            <Text style={homeStyle.cardTitle}>Symptoms</Text>
+                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
+                        </View>
+                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeStyle.cardSection}>
+                        <View style={homeStyle.cardLeftSide}>
+                            <Text style={homeStyle.cardTitle}>Prevention</Text>
+                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
+                        </View>
+                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeStyle.cardSection}>
+                        <View style={homeStyle.cardLeftSide}>
+                            <Text style={homeStyle.cardTitle}>Treatment</Text>
+                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
+                        </View>
+                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeStyle.cardSection}>
+                        <View style={homeStyle.cardLeftSide}>
+                            <Text style={homeStyle.cardTitle}>What does not help</Text>
+                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
+                        </View>
+                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeStyle.cardSection}>
+                        <View style={homeStyle.cardLeftSide}>
+                            <Text style={homeStyle.cardTitle}>More Info</Text>
+                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
+                        </View>
+                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
+                    </TouchableOpacity>
+                </ScrollView>
+            </ImageBackground>
+        </View>
+    );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default Home;
