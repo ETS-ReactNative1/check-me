@@ -62,6 +62,12 @@ const symptomsStyle = StyleSheet.create({
     btnText: {
         color: theme.white,
     },
+    result: {
+        fontSize: 20,
+        color: theme.primary,
+        marginTop: 10,
+        fontWeight: 'bold',
+    },
 });
 
 export default symptomsStyle;

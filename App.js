@@ -52,8 +52,8 @@ const App: () => React$Node = () => {
           >
             <Scene key="home" component={Home} icon={TabIcon} iconName="home" tabBarLabel="Home" hideNavBar={true} />
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="user-md" tabBarLabel="Test" hideNavBar={true} />
-            <Scene key="sos" component={Home} icon={TabIcon} iconName="medkit" tabBarLabel="SOS" hideNavBar={true} />
-            <Scene key="help" component={Home} icon={TabIcon} iconName="globe" tabBarLabel="Help" hideNavBar={true} />
+            <Scene key="help" component={Home} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
+            <Scene key="statistics" component={Home} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
           </Scene>
         </Stack>
       </Router>
