@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import theme from './../../assets/theme/color';
+import fontTheme from './../../assets/theme/font';
 
 const symptomsStyle = StyleSheet.create({
     background: {
@@ -34,21 +35,21 @@ const symptomsStyle = StyleSheet.create({
         textAlign: "center",
         color: theme.white,
         marginVertical: 7,
-        fontSize: 12,
+        fontSize: fontTheme.small,
     },
     title: {
-        fontSize: 20,
+        fontSize: fontTheme.text20,
         color: theme.white,
         textAlign: 'center',
         marginTop: 7,
     },
     question: {
-        fontSize: 20,
+        fontSize: fontTheme.text20,
         textAlign: 'center',
         marginVertical: 10,
     },
     description: {
-        fontSize: 16,
+        fontSize: fontTheme.text16,
         textAlign: 'center',
     },
     btn: {
@@ -63,7 +64,7 @@ const symptomsStyle = StyleSheet.create({
         color: theme.white,
     },
     result: {
-        fontSize: 20,
+        fontSize: fontTheme.text20,
         color: theme.primary,
         marginTop: 10,
         fontWeight: 'bold',

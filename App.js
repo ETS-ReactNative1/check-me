@@ -16,6 +16,9 @@ import theme from './src/assets/theme/color';
 import singleItemStyle from './src/container/singleItem/singleItem';
 import CustomNavBar from './src/components/navbar';
 import Symptoms from './src/container/symptoms/symptoms';
+import Contact from './src/container/contact/contact';
+import Statistics from './src/container/statistics/statistics';
+import WebViewComponent from './src/components/webview';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
@@ -34,12 +37,13 @@ const Navbar = (props) => {
   )
 }
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
       <Router>
         <Stack key="root">
-          <Scene key="singleItem" component={singleItemStyle} navBar={CustomNavBar} />
+          <Scene key="singleItem" component={singleItemStyle} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
+          <Scene key="webview" component={WebViewComponent} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
 
           <Scene
             key="mainScreens"
@@ -52,8 +56,8 @@ const App: () => React$Node = () => {
           >
             <Scene key="home" component={Home} icon={TabIcon} iconName="home" tabBarLabel="Home" hideNavBar={true} />
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="user-md" tabBarLabel="Test" hideNavBar={true} />
-            <Scene key="help" component={Home} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
-            <Scene key="statistics" component={Home} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
+            <Scene key="help" component={Contact} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
+            <Scene key="statistics" component={Statistics} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
           </Scene>
         </Stack>
       </Router>
