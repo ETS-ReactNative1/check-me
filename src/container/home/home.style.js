@@ -16,6 +16,8 @@ const homeStyle = StyleSheet.create({
         marginLeft: '30%',
         marginRight: '5%',
         marginTop: '30%',
+        fontFamily: 'Roboto-Regular',
+        // fontWeight: 'bold',
     },
     cardSection: {
         backgroundColor: theme.white,
