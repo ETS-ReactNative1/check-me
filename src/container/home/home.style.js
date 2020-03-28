@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 import theme from './../../assets/theme/color';
+import fontTheme from '../../assets/theme/font';
 
 const homeStyle = StyleSheet.create({
     background: {
-        flex: 1
+        flex: 1,
     },
     backgroundImage: {
         flex: 1,
@@ -17,11 +18,10 @@ const homeStyle = StyleSheet.create({
         marginRight: '5%',
         marginTop: '30%',
         fontFamily: 'Roboto-Regular',
-        // fontWeight: 'bold',
     },
     cardSection: {
         backgroundColor: theme.white,
-        paddingVertical: 20,
+        paddingVertical: 5,
         marginHorizontal: 30,
         marginTop: 15,
         display: 'flex',
@@ -31,20 +31,24 @@ const homeStyle = StyleSheet.create({
         borderRadius: 10,
     },
     cardLeftSide: {
-        width: '60%',
+        width: '65%',
     },
     cardRightSide: {
-        width: 100,
-        height: 100,
+        width: 120,
+        height: 120,
         resizeMode: "cover",
     },
     cardTitle: {
-        fontSize: 16,
+        fontSize: fontTheme.text16,
         marginVertical: 10,
         color: theme.primary,
+        fontFamily: 'Roboto-Medium',
     },
     cardScrollSection: {
         marginTop: 20,
+    },
+    cardDesc: {
+        fontFamily: 'Roboto-Light',
     },
 });
 

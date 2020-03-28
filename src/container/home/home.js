@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import {
     ScrollView,
     ImageBackground,
@@ -16,52 +16,65 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { useDispatch, useSelector } from "react-redux";
+
+import { getHomeData } from './../../actions/home';
+import { trunc } from './../../components/functions';
 
 import homeStyle from './home.style';
 
 function Home() {
+    const {
+        homeData
+    } = useSelector(state => ({
+        homeData: state.home.homePage,
+    }));
+    const dispatch = useDispatch();
+
+    useLayoutEffect(() => {
+        dispatch(getHomeData());
+    }, [dispatch]);
+    console.log(homeData)
     return (
         <View style={homeStyle.background}>
-            <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
-                <Text style={homeStyle.titleText}>Be informed on the best ways to protect yourself from Corona virus</Text>
-                <ScrollView style={homeStyle.cardScrollSection}>
-                    <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.singleItem()}>
-                        <View style={homeStyle.cardLeftSide}>
-                            <Text style={homeStyle.cardTitle}>Symptoms</Text>
-                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
-                        </View>
-                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={homeStyle.cardSection}>
-                        <View style={homeStyle.cardLeftSide}>
-                            <Text style={homeStyle.cardTitle}>Prevention</Text>
-                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
-                        </View>
-                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={homeStyle.cardSection}>
-                        <View style={homeStyle.cardLeftSide}>
-                            <Text style={homeStyle.cardTitle}>Treatment</Text>
-                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
-                        </View>
-                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={homeStyle.cardSection}>
-                        <View style={homeStyle.cardLeftSide}>
-                            <Text style={homeStyle.cardTitle}>What does not help</Text>
-                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
-                        </View>
-                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={homeStyle.cardSection}>
-                        <View style={homeStyle.cardLeftSide}>
-                            <Text style={homeStyle.cardTitle}>More Info</Text>
-                            <Text>Bear claw pie marzipan topping macaroon gummi bears soufflé gummi bears soufflé.</Text>
-                        </View>
-                        <Image style={homeStyle.cardRightSide} source={require('./../../assets/images/home.png')} />
-                    </TouchableOpacity>
-                </ScrollView>
-            </ImageBackground>
+            {
+                homeData === null ?
+                    <View></View>
+                    :
+                    <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
+                        <Text style={homeStyle.titleText}>{homeData['home-title']}</Text>
+                        <ScrollView style={homeStyle.cardScrollSection}>
+                            <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.singleItem({symptoms: homeData.symtoms})}>
+                                <View style={homeStyle.cardLeftSide}>
+                                    <Text style={homeStyle.cardTitle}>{homeData.symtoms.title}</Text>
+                                    <Text style={homeStyle.cardDesc}>{trunc(homeData.symtoms.descripton)}</Text>
+                                </View>
+                                <Image style={homeStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={homeStyle.cardSection}>
+                                <View style={homeStyle.cardLeftSide}>
+                                    <Text style={homeStyle.cardTitle}>{homeData.prevention.title}</Text>
+                                    <Text style={homeStyle.cardDesc}>{trunc(homeData.prevention.description)}</Text>
+                                </View>
+                                <Image style={homeStyle.cardRightSide} source={{uri : 'https://raw.githubusercontent.com/Cressence/images/master/prevention.png'}} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={homeStyle.cardSection}>
+                                <View style={homeStyle.cardLeftSide}>
+                                    <Text style={homeStyle.cardTitle}>{homeData.risk.title}</Text>
+                                    <Text style={homeStyle.cardDesc}>{trunc(homeData.risk.descr)}</Text>
+                                </View>
+                                <Image style={homeStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/old.png'}} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={homeStyle.cardSection}>
+                                <View style={homeStyle.cardLeftSide}>
+                                    <Text style={homeStyle.cardTitle}>{homeData.support.title}</Text>
+                                    <Text style={homeStyle.cardDesc}>{trunc(homeData.support.description)}</Text>
+                                </View>
+                                <Image style={homeStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/support.png'}} />
+                            </TouchableOpacity>
+                        </ScrollView>
+                    </ImageBackground>
+            }
         </View>
     );
 };

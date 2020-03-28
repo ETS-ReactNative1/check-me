@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import {
     ScrollView,
     View,
@@ -16,20 +16,54 @@ import {
 
 import singleItemStyle from './singleItem.style';
 
-function SingleItem() {
+function SingleItem(props) {
+    useLayoutEffect(() => {
+        props.navigation.setParams({
+            title: props.symptoms.title,
+        })
+    }, []);
+    const data = props.symptoms;
+    console.log(props)
     return (
         <View style={singleItemStyle.background}>
             <ScrollView>
-                <Text>Symptoms</Text>
-                <Text>
-                    Pudding gummi bears pudding gummies wafer sweet marzipan chupa chups soufflé. Wafer fruitcake marshmallow apple pie wafer cake. Halvah macaroon danish. Fruitcake gummies brownie dessert. Cheesecake brownie jelly beans. Sugar plum chupa chups icing cookie cake. Chocolate bar caramels candy canes. Pudding lollipop lemon drops liquorice tootsie roll jujubes jelly-o chocolate. Lollipop jelly beans chocolate bar cheesecake danish jujubes. Cookie donut oat cake tootsie roll cookie fruitcake lollipop pie. Croissant dessert caramels sweet roll. Gummies macaroon soufflé sugar plum. Danish cupcake chocolate candy canes gummies sweet brownie. Chocolate brownie pudding.
-                </Text>
-                <Text>
-                    Pudding gummi bears pudding gummies wafer sweet marzipan chupa chups soufflé. Wafer fruitcake marshmallow apple pie wafer cake. Halvah macaroon danish. Fruitcake gummies brownie dessert. Cheesecake brownie jelly beans. Sugar plum chupa chups icing cookie cake. Chocolate bar caramels candy canes. Pudding lollipop lemon drops liquorice tootsie roll jujubes jelly-o chocolate. Lollipop jelly beans chocolate bar cheesecake danish jujubes. Cookie donut oat cake tootsie roll cookie fruitcake lollipop pie. Croissant dessert caramels sweet roll. Gummies macaroon soufflé sugar plum. Danish cupcake chocolate candy canes gummies sweet brownie. Chocolate brownie pudding.
-                </Text>
-                <Text>
-                    Pudding gummi bears pudding gummies wafer sweet marzipan chupa chups soufflé. Wafer fruitcake marshmallow apple pie wafer cake. Halvah macaroon danish. Fruitcake gummies brownie dessert. Cheesecake brownie jelly beans. Sugar plum chupa chups icing cookie cake. Chocolate bar caramels candy canes. Pudding lollipop lemon drops liquorice tootsie roll jujubes jelly-o chocolate. Lollipop jelly beans chocolate bar cheesecake danish jujubes. Cookie donut oat cake tootsie roll cookie fruitcake lollipop pie. Croissant dessert caramels sweet roll. Gummies macaroon soufflé sugar plum. Danish cupcake chocolate candy canes gummies sweet brownie. Chocolate brownie pudding.
-                </Text>
+                <Text style={singleItemStyle.description}>{data.descripton}</Text>
+                <View>
+                    {
+                        data.source.map((item, index) => {
+                            return (<Text style={singleItemStyle.source} key={index}>{item}</Text>)
+                        })
+                    }
+                </View>
+                <Text style={singleItemStyle.common}>{data.common_title}</Text>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_one}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/fever.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_two}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_three}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/cough.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_four}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_five}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_six}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                </View>
+                <View>
+                    <Text style={singleItemStyle.subheading}>{data.symptom_seven}</Text>
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                </View>
             </ScrollView>
         </View>
     );
