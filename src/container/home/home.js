@@ -34,7 +34,6 @@ function Home() {
     useLayoutEffect(() => {
         dispatch(getHomeData());
     }, [dispatch]);
-    console.log(homeData)
     return (
         <View style={homeStyle.background}>
             {
@@ -51,21 +50,21 @@ function Home() {
                                 </View>
                                 <Image style={homeStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={homeStyle.cardSection}>
+                            <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.prevention({prevention: homeData.prevention})}>
                                 <View style={homeStyle.cardLeftSide}>
                                     <Text style={homeStyle.cardTitle}>{homeData.prevention.title}</Text>
                                     <Text style={homeStyle.cardDesc}>{trunc(homeData.prevention.description)}</Text>
                                 </View>
                                 <Image style={homeStyle.cardRightSide} source={{uri : 'https://raw.githubusercontent.com/Cressence/images/master/prevention.png'}} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={homeStyle.cardSection}>
+                            <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.risk({risk: homeData.risk})}>
                                 <View style={homeStyle.cardLeftSide}>
                                     <Text style={homeStyle.cardTitle}>{homeData.risk.title}</Text>
                                     <Text style={homeStyle.cardDesc}>{trunc(homeData.risk.descr)}</Text>
                                 </View>
                                 <Image style={homeStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/old.png'}} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={homeStyle.cardSection}>
+                            <TouchableOpacity style={homeStyle.cardSection} onPress={() => Actions.support({support: homeData.support})}>
                                 <View style={homeStyle.cardLeftSide}>
                                     <Text style={homeStyle.cardTitle}>{homeData.support.title}</Text>
                                     <Text style={homeStyle.cardDesc}>{trunc(homeData.support.description)}</Text>

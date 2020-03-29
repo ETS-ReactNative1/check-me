@@ -23,7 +23,6 @@ function SingleItem(props) {
         })
     }, []);
     const data = props.symptoms;
-    console.log(props)
     return (
         <View style={singleItemStyle.background}>
             <ScrollView>
@@ -50,19 +49,18 @@ function SingleItem(props) {
                 </View>
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_four}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/shortness.png'}} />
                 </View>
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_five}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/pain.png'}} />
                 </View>
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_six}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/sore.png'}} />
                 </View>
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_seven}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
                 </View>
             </ScrollView>
         </View>

@@ -14,22 +14,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './src/container/home/home';
 import theme from './src/assets/theme/color';
 import singleItemStyle from './src/container/singleItem/singleItem';
-import CustomNavBar from './src/components/navbar';
 import Symptoms from './src/container/symptoms/symptoms';
 import Contact from './src/container/contact/contact';
 import Statistics from './src/container/statistics/statistics';
 import WebViewComponent from './src/components/webview';
+import Prevention from './src/container/prevention/prevention';
+import Risk from './src/container/risk/risk';
+import Support from './src/container/support/support';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
-  return (
-    <View style={{ flex: 1, flexDirection: 'column', alignSelf: 'center', marginTop: 5 }}>
-      <Icon name={props.iconName} size={23} color={color} />
-    </View>
-  )
-}
-
-const Navbar = (props) => {
   return (
     <View style={{ flex: 1, flexDirection: 'column', alignSelf: 'center', marginTop: 5 }}>
       <Icon name={props.iconName} size={23} color={color} />
@@ -44,7 +38,9 @@ const App = () => {
         <Stack key="root">
           <Scene key="singleItem" component={singleItemStyle} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
           <Scene key="webview" component={WebViewComponent} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
-
+          <Scene key="prevention" component={Prevention} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
+          <Scene key="risk" component={Risk} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
+          <Scene key="support" component={Support} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
           <Scene
             key="mainScreens"
             tabs={true}

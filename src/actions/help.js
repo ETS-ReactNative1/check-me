@@ -1,10 +1,10 @@
 import {
-    HOME, API_FAIL
+    HELP, API_FAIL
 } from './../constants/constant';
 import { URL } from './../components/config';
 
-function getHomeDataPromise() {
-    return fetch(`${URL}/home`)
+function getHelpDataPromise() {
+    return fetch(`${URL}/help`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());
@@ -19,10 +19,10 @@ function getHomeDataPromise() {
         });
 }
 
-export const getHomeData = () => (dispatch) => {
-    return getHomeDataPromise()
+export const getHelpData = () => (dispatch) => {
+    return getHelpDataPromise()
         .then(resp => dispatch({
-            type: HOME,
+            type: HELP,
             data: resp
         }))
         .catch(resp => dispatch({

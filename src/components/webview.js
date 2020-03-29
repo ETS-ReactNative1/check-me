@@ -1,12 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import WebView from 'react-native-webview';
 
 class WebViewComponent extends Component {
+
+  componentDidMount() {
+    this.props.navigation.setParams({
+      title: this.props.title,
+    })
+  }
+
   render() {
-      console.log(this.props.url)
     return (
       <WebView
-        source={{uri: this.props.url}}
+        source={{ uri: this.props.url }}
       />
     );
   }

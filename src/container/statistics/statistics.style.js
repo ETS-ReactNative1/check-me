@@ -13,6 +13,7 @@ const statisticsStyle = StyleSheet.create({
         marginVertical: 15,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
+        padding: 5,
     },
     title: {
         fontSize: fontTheme.text20,
@@ -34,8 +35,9 @@ const statisticsStyle = StyleSheet.create({
         fontWeight: "bold",
         color: theme.primary,
     },
-    date: {
-        fontSize: fontTheme.text14,
+    flag: {
+        height: 20,
+        width: 40,
     },
     statsData: {
         display: 'flex',
@@ -45,6 +47,9 @@ const statisticsStyle = StyleSheet.create({
     statsText: {
         fontSize: fontTheme.text14,
     },
+    camer: {
+        backgroundColor: theme.light_grey,
+    }
 });
 
 export default statisticsStyle;

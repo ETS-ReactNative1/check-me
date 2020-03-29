@@ -8,23 +8,23 @@ const contactStyle = StyleSheet.create({
         backgroundColor: theme.light_grey,
     },
     logoImg: {
-        width: 120,
-        height: 120,
+        width: 150,
+        height: 150,
         borderRadius: 60,
         alignSelf: 'center',
-        marginBottom: 30,
+        marginBottom: 10,
     },
     title: {
         textAlign: 'center',
         fontSize: fontTheme.text20,
         marginTop: 50,
-        marginBottom: 30,
+        marginBottom: 10,
         color: theme.primary,
     },
     helpCard: {
         backgroundColor: theme.white,
         marginHorizontal: '7%',
-        height: 120,
+        minHeight: 120,
         borderRadius: 20,
         marginVertical: 10,
     },
@@ -54,7 +54,8 @@ const contactStyle = StyleSheet.create({
         marginHorizontal: 30,
     },
     sos: {
-        fontSize: fontTheme.text20,
+        fontSize: fontTheme.text16,
+        marginVertical: 10,
     },
 });
 

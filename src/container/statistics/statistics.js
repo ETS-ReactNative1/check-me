@@ -6,56 +6,116 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import {
     ScrollView,
     View,
     Text,
-    TouchableOpacity,
+    Image
 } from 'react-native';
 import { data } from './../../components/data';
+import { useDispatch, useSelector } from "react-redux";
+
+import { getStatisticsData, getCamerData, getWorldData } from './../../actions/statistics';
 
 import statisticsStyle from './statistics.style';
 
-function Stitistics() {
+function Statistics() {
+    const {
+        statisticsData, camerStatData, countryStatData
+    } = useSelector(state => ({
+        statisticsData: state.statistics.statisticsPage,
+        camerStatData: state.statistics.camerStat,
+        countryStatData: state.statistics.countryStat
+    }));
+    const dispatch = useDispatch();
+
+    useLayoutEffect(() => {
+        dispatch(getStatisticsData());
+        dispatch(getCamerData());
+        dispatch(getWorldData());
+    }, [dispatch]);
+    console.log(countryStatData)
     return (
         <View style={statisticsStyle.background}>
-            <Text style={statisticsStyle.title}>Statistics</Text>
-            <Text style={statisticsStyle.descr}>This statistics is gotten from some site This statistics is gotten from some site</Text>
-            <ScrollView>
-                {
-                    Object.keys(data).map((country, index) => {
-                        const country_data = data[country];
-                        const last_item = country_data[country_data.length - 1];
-                        return (
-                            <TouchableOpacity key={index} style={statisticsStyle.countryStat}>
-                                <View style={statisticsStyle.countryTop}>
-                                    <Text style={statisticsStyle.countryName}>{country.toUpperCase()}</Text>
-                                    <Text style={statisticsStyle.date}>{last_item.date}</Text>
-                                </View>
-                                <View style={statisticsStyle.countryTop}>
-                                    <Text style={statisticsStyle.statsText}>
-                                        Confirmed {"\n"}
-                                        {last_item.confirmed}
-                                    </Text>
-                                    <Text>
-                                        Death {"\n"}
-                                        {last_item.fatal}
-                                    </Text>
-                                    <Text>
-                                        Recovered {"\n"}
-                                        {last_item.recovered}
-                                    </Text>
-                                </View>
+            {
+                ((statisticsData !== null) && (camerStatData !== null) && (countryStatData !== null)) ?
+                    <View>
+                        <Text style={statisticsStyle.title}>{statisticsData.title}</Text>
+                        {/* <Text style={statisticsStyle.descr}>{statisticsData.desctiption}</Text> */}
+                        <View style={[statisticsStyle.countryStat, statisticsStyle.camer]}>
+                            <View style={statisticsStyle.countryTop}>
+                                <Text style={statisticsStyle.countryName}>{camerStatData.country.toUpperCase()}</Text>
+                                <Image style={statisticsStyle.flag} source={{ uri: camerStatData.countryInfo.flag }} />
+                            </View>
+                            <View style={statisticsStyle.countryTop}>
+                                <Text style={statisticsStyle.statsText}>
+                                    {statisticsData.cases}: {camerStatData.cases}
+                                </Text>
+                                <Text>
+                                    {statisticsData.death}: {camerStatData.deaths}
+                                </Text>
+                                <Text>
+                                    {statisticsData.recovered}: {camerStatData.recovered}
+                                </Text>
+                            </View>
+                            <View style={statisticsStyle.countryTop}>
+                                <Text style={statisticsStyle.statsText}>
+                                    {statisticsData.todayCases}: {camerStatData.todayCases}
+                                </Text>
+                                <Text>
+                                    {statisticsData.todayDeath}: {camerStatData.todayDeaths}
+                                </Text>
+                                <Text>
+                                    {statisticsData.activecases}: {camerStatData.active}
+                                </Text>
+                            </View>
 
-                            </TouchableOpacity>
-                        )
-                    })
-                }
-            </ScrollView>
+                        </View>
+                        <ScrollView>
+                            {
+                                countryStatData.map((country, index) => {
+                                    return (
+                                        <View key={index} style={statisticsStyle.countryStat}>
+                                            <View style={statisticsStyle.countryTop}>
+                                                <Text style={statisticsStyle.countryName}>{country.country.toUpperCase()}</Text>
+                                                <Image style={statisticsStyle.flag} source={{ uri: country.countryInfo.flag }} />
+                                            </View>
+                                            <View style={statisticsStyle.countryTop}>
+                                                <Text style={statisticsStyle.statsText}>
+                                                    {statisticsData.cases}: {country.cases}
+                                                </Text>
+                                                <Text>
+                                                    {statisticsData.death}: {country.deaths}
+                                                </Text>
+                                                <Text>
+                                                    {statisticsData.recovered}: {country.recovered}
+                                                </Text>
+                                            </View>
+                                            <View style={statisticsStyle.countryTop}>
+                                                <Text style={statisticsStyle.statsText}>
+                                                    {statisticsData.todayCases}: {country.todayCases}
+                                                </Text>
+                                                <Text>
+                                                    {statisticsData.todayDeath}: {country.todayDeaths}
+                                                </Text>
+                                                <Text>
+                                                    {statisticsData.activecases}: {country.active}
+                                                </Text>
+                                            </View>
+
+                                        </View>
+                                    )
+                                })
+                            }
+                        </ScrollView>
+                    </View>
+                    :
+                    <View></View>
+            }
 
         </View>
     );
 };
 
-export default Stitistics;
+export default Statistics;

@@ -2,19 +2,12 @@ import { StyleSheet } from 'react-native';
 import theme from './../../assets/theme/color';
 import fontTheme from '../../assets/theme/font';
 
-const singleItemStyle = StyleSheet.create({
+const riskStyle = StyleSheet.create({
     background: {
         flex: 1,
         paddingTop: 10,
         paddingBottom: 20,
         paddingHorizontal: 15,
-    },
-    cardRightSide: {
-        width: 150,
-        height: 150,
-        resizeMode: "cover",
-        alignSelf: 'center',
-        marginBottom: 15,
     },
     description: {
         fontSize: fontTheme.text14,
@@ -25,16 +18,24 @@ const singleItemStyle = StyleSheet.create({
         fontSize: fontTheme.small,
         fontFamily: 'Roboto-Italic',
     },
-    common: {
-        marginVertical: 7,
-        fontSize: fontTheme.text20,
-        color: theme.primary,
+    points: {
+        marginVertical: 10,
+        display: 'flex',
+        flexDirection: 'row',
     },
     subheading: {
         fontSize: theme.text14,
         fontFamily: 'Roboto-Bold',
         marginVertical: 5,
     },
+    learnContainer: {
+        marginVertical: 5,
+        marginLeft: '10%',
+    },
+    learnText: {
+        color: theme.primary,
+        textDecorationColor: theme.primary,
+    },
 });
 
-export default singleItemStyle;
+export default riskStyle;
