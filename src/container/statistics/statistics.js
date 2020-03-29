@@ -34,7 +34,7 @@ function Statistics() {
         dispatch(getCamerData());
         dispatch(getWorldData());
     }, [dispatch]);
-    console.log(countryStatData)
+
     return (
         <View style={statisticsStyle.background}>
             {

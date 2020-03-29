@@ -38,7 +38,6 @@ function Contact() {
     useLayoutEffect(() => {
         dispatch(getHelpData());
     }, [dispatch]);
-    console.log(helpData)
     return (
         <View style={contactStyle.background}>
             {
