@@ -36,11 +36,11 @@ const App = () => {
     <>
       <Router>
         <Stack key="root">
-          <Scene key="singleItem" component={singleItemStyle} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
-          <Scene key="webview" component={WebViewComponent} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
-          <Scene key="prevention" component={Prevention} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
-          <Scene key="risk" component={Risk} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
-          <Scene key="support" component={Support} navigationBarStyle={{backgroundColor: theme.primary}} navBarButtonColor={theme.white} />
+          <Scene key="singleItem" component={singleItemStyle} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+          <Scene key="webview" component={WebViewComponent} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+          <Scene key="prevention" component={Prevention} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+          <Scene key="risk" component={Risk} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+          <Scene key="support" component={Support} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene
             key="mainScreens"
             tabs={true}

@@ -54,6 +54,7 @@
 		FAF31AB5F95A40C9846737E7 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFC02C9CBE374686AD28BEDB /* RobotoCondensed-Light.ttf */; };
 		B1B6CD64C59743C4BDBBE76A /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8830F316F4A74751BADDB81C /* RobotoCondensed-LightItalic.ttf */; };
 		07023A26BA26483A919622A5 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 105F6FA1B1DB436FB00D853D /* RobotoCondensed-Regular.ttf */; };
+		5A58FF985AD940DD915F3FC3 /* sophia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 114D8786A5A14F65942036B5 /* sophia.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		BFC02C9CBE374686AD28BEDB /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-Light.ttf"; path = "../src/assets/fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8830F316F4A74751BADDB81C /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-LightItalic.ttf"; path = "../src/assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		105F6FA1B1DB436FB00D853D /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-Regular.ttf"; path = "../src/assets/fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		114D8786A5A14F65942036B5 /* sophia.ttf */ = {isa = PBXFileReference; name = "sophia.ttf"; path = "../src/assets/fonts/sophia.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				BFC02C9CBE374686AD28BEDB /* RobotoCondensed-Light.ttf */,
 				8830F316F4A74751BADDB81C /* RobotoCondensed-LightItalic.ttf */,
 				105F6FA1B1DB436FB00D853D /* RobotoCondensed-Regular.ttf */,
+				114D8786A5A14F65942036B5 /* sophia.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				FAF31AB5F95A40C9846737E7 /* RobotoCondensed-Light.ttf in Resources */,
 				B1B6CD64C59743C4BDBBE76A /* RobotoCondensed-LightItalic.ttf in Resources */,
 				07023A26BA26483A919622A5 /* RobotoCondensed-Regular.ttf in Resources */,
+				5A58FF985AD940DD915F3FC3 /* sophia.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

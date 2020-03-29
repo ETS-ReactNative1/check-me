@@ -13,7 +13,6 @@ import {
     Text,
     Image
 } from 'react-native';
-import { data } from './../../components/data';
 import { useDispatch, useSelector } from "react-redux";
 
 import { getStatisticsData, getCamerData, getWorldData } from './../../actions/statistics';
