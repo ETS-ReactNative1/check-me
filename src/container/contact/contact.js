@@ -43,10 +43,8 @@ function Contact() {
         <View style={contactStyle.background}>
             {
                 helpData === null ?
-                    <View>
-                        <View style={contactStyle.refresh}>
-                            <ActivityIndicator size="large" color={theme.primary} />
-                        </View>
+                    <View style={contactStyle.refresh}>
+                        <ActivityIndicator size="large" color={theme.primary} />
                     </View>
                     :
                     <ScrollView>
