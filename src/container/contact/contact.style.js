@@ -57,6 +57,11 @@ const contactStyle = StyleSheet.create({
         fontSize: fontTheme.text16,
         marginVertical: 10,
     },
+    refresh: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default contactStyle;

@@ -13,6 +13,7 @@ import {
     Image,
     TouchableOpacity,
     ScrollView,
+    ActivityIndicator,
 } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from 'react-native-router-flux';
@@ -20,12 +21,16 @@ import { Actions } from 'react-native-router-flux';
 
 import { truncTitle, trunc } from './../../components/functions';
 import { getNews } from './../../actions/news';
+import theme from './../../assets/theme/color';
+
+import symptomsStyle from './symptoms.style';
+
 
 const Intro = (data) => {
     const myData = data.data;
     return (
         <View style={symptomsStyle.cardbackground}>
-            <Image style={symptomsStyle.symptomImg} source={{uri: myData.urlToImage}} />
+            <Image style={symptomsStyle.symptomImg} source={{ uri: myData.urlToImage }} />
             <View style={symptomsStyle.bottomSection}>
                 <Text style={symptomsStyle.question}>{truncTitle(myData.title)}</Text>
                 <Text style={symptomsStyle.description}>{trunc(myData.description)}</Text>
@@ -36,8 +41,6 @@ const Intro = (data) => {
         </View>
     );
 }
-
-import symptomsStyle from './symptoms.style';
 
 function Symptoms() {
     const {
@@ -55,7 +58,9 @@ function Symptoms() {
         <View style={symptomsStyle.background}>
             {
                 newsList === null ?
-                    <View></View>
+                    <View style={symptomsStyle.refresh}>
+                        <ActivityIndicator size="large" color={theme.primary} />
+                    </View>
                     :
                     <View>
                         <Text style={symptomsStyle.mainTitle}>Trending News on Coronavirus</Text>

@@ -50,6 +50,11 @@ const homeStyle = StyleSheet.create({
     cardDesc: {
         fontFamily: 'Roboto-Light',
     },
+    refresh: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default homeStyle;

@@ -49,7 +49,12 @@ const statisticsStyle = StyleSheet.create({
     },
     camer: {
         backgroundColor: theme.light_grey,
-    }
+    },
+    refresh: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default statisticsStyle;

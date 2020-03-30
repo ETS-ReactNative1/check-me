@@ -51,7 +51,7 @@ const App = () => {
             initial
           >
             <Scene key="home" component={Home} icon={TabIcon} iconName="home" tabBarLabel="Home" hideNavBar={true} />
-            <Scene key="test" component={Symptoms} icon={TabIcon} iconName="user-md" tabBarLabel="Test" hideNavBar={true} />
+            <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />
             <Scene key="help" component={Contact} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
             <Scene key="statistics" component={Statistics} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
           </Scene>

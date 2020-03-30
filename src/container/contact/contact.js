@@ -13,7 +13,8 @@ import {
     Text,
     Image,
     Linking,
-    TouchableOpacity
+    TouchableOpacity,
+    ActivityIndicator,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from "react-redux";
@@ -42,11 +43,15 @@ function Contact() {
         <View style={contactStyle.background}>
             {
                 helpData === null ?
-                    <View></View>
+                    <View>
+                        <View style={contactStyle.refresh}>
+                            <ActivityIndicator size="large" color={theme.primary} />
+                        </View>
+                    </View>
                     :
                     <ScrollView>
                         <Text style={contactStyle.title}>{helpData.help_title}</Text>
-                        <Image style={contactStyle.logoImg} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/help.png'}} />
+                        <Image style={contactStyle.logoImg} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/help.png' }} />
                         <View style={contactStyle.helpCard}>
                             <View style={contactStyle.helpTopSection}>
                                 <Text style={contactStyle.helpTopTitle}>{helpData.emergency.title}</Text>

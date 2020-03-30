@@ -11,13 +11,15 @@ import {
     ScrollView,
     View,
     Text,
-    Image
+    Image,
+    ActivityIndicator,
 } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 
 import { getStatisticsData, getCamerData, getWorldData } from './../../actions/statistics';
 
 import statisticsStyle from './statistics.style';
+import theme from './../../assets/theme/color';
 
 function Statistics() {
     const {
@@ -110,7 +112,9 @@ function Statistics() {
                         </ScrollView>
                     </View>
                     :
-                    <View></View>
+                    <View style={statisticsStyle.refresh}>
+                        <ActivityIndicator size="large" color={theme.primary} />
+                    </View>
             }
 
         </View>

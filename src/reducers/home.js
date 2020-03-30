@@ -1,5 +1,5 @@
 import {
-    HOME
+    HOME, RESET_HOME
 } from './../constants/constant';
 
 const initialState = {
@@ -13,6 +13,12 @@ const home = (state = initialState, action) => {
             return {
                 ...state,
                 homePage: action.data
+            }
+        }
+        case RESET_HOME: {
+            return {
+                ...state,
+                homePage: null
             }
         }
         default:

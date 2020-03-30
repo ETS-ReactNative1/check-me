@@ -1,5 +1,5 @@
 import {
-    HOME, API_FAIL
+    HOME, API_FAIL, RESET_HOME
 } from './../constants/constant';
 import { URL } from './../components/config';
 
@@ -30,3 +30,10 @@ export const getHomeData = () => (dispatch) => {
             data: resp
         }))
 };
+
+// export const resetHomeData = () => (dispatch) => {
+//     dispatch({
+//         type: RESET_HOME,
+//         data: null
+//     })
+// };

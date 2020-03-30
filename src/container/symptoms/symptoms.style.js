@@ -50,6 +50,11 @@ const symptomsStyle = StyleSheet.create({
         color: theme.primary,
         textAlign: 'right',
     },
+    refresh: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default symptomsStyle;
