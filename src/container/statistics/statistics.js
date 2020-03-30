@@ -56,10 +56,8 @@ function Statistics() {
                                 <Text>
                                     {statisticsData.death}: {camerStatData.deaths}
                                 </Text>
-                                <Text>
-                                    {statisticsData.recovered}: {camerStatData.recovered}
-                                </Text>
                             </View>
+
                             <View style={statisticsStyle.countryTop}>
                                 <Text style={statisticsStyle.statsText}>
                                     {statisticsData.todayCases}: {camerStatData.todayCases}
@@ -67,8 +65,14 @@ function Statistics() {
                                 <Text>
                                     {statisticsData.todayDeath}: {camerStatData.todayDeaths}
                                 </Text>
+                            </View>
+
+                            <View style={statisticsStyle.countryTop}>
                                 <Text>
                                     {statisticsData.activecases}: {camerStatData.active}
+                                </Text>
+                                <Text>
+                                    {statisticsData.recovered}: {camerStatData.recovered}
                                 </Text>
                             </View>
 
@@ -89,10 +93,8 @@ function Statistics() {
                                                 <Text>
                                                     {statisticsData.death}: {country.deaths}
                                                 </Text>
-                                                <Text>
-                                                    {statisticsData.recovered}: {country.recovered}
-                                                </Text>
                                             </View>
+
                                             <View style={statisticsStyle.countryTop}>
                                                 <Text style={statisticsStyle.statsText}>
                                                     {statisticsData.todayCases}: {country.todayCases}
@@ -100,8 +102,14 @@ function Statistics() {
                                                 <Text>
                                                     {statisticsData.todayDeath}: {country.todayDeaths}
                                                 </Text>
+                                            </View>
+
+                                            <View style={statisticsStyle.countryTop}>
                                                 <Text>
                                                     {statisticsData.activecases}: {country.active}
+                                                </Text>
+                                                <Text>
+                                                    {statisticsData.recovered}: {country.recovered}
                                                 </Text>
                                             </View>
 
