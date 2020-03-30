@@ -19,7 +19,7 @@ import theme from './../../assets/theme/color';
 
 function Risk() {
     useEffect(() => {
-        setTimeout(() => Actions.home(), 3000);
+        setTimeout(() => Actions.onboarding(), 3000);
     });
     return (
         <View style={splashStyle.background}>

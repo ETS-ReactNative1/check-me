@@ -38,8 +38,8 @@ const App = () => {
     <>
       <Router>
         <Stack key="root">
-          <Scene key="splash" component={Splash} hideNavBar />
-          <Scene key="onboarding" component={OnboardingComponent} hideNavBar initial />
+          <Scene key="splash" component={Splash} hideNavBar initial />
+          <Scene key="onboarding" component={OnboardingComponent} hideNavBar />
           <Scene key="singleItem" component={SingleItem} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="webview" component={WebViewComponent} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="prevention" component={Prevention} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />

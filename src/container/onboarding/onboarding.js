@@ -27,8 +27,6 @@ function OnboardingComponent() {
                 allowFontScaling={false}
                 onDone={() => Actions.home()}
                 skipToPage={2}
-                titleStyles={onboardingStyle.title}
-                subTitleStyles={onboardingStyle.subTitle}
                 pages={[
                     {
                         backgroundColor: '#666633',
