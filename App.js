@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './src/container/home/home';
 import theme from './src/assets/theme/color';
-import singleItemStyle from './src/container/singleItem/singleItem';
+import SingleItem from './src/container/singleItem/singleItem';
 import Symptoms from './src/container/symptoms/symptoms';
 import Contact from './src/container/contact/contact';
 import Statistics from './src/container/statistics/statistics';
@@ -21,6 +21,7 @@ import WebViewComponent from './src/components/webview';
 import Prevention from './src/container/prevention/prevention';
 import Risk from './src/container/risk/risk';
 import Support from './src/container/support/support';
+import Splash from './src/container/splash/splash';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
@@ -36,7 +37,8 @@ const App = () => {
     <>
       <Router>
         <Stack key="root">
-          <Scene key="singleItem" component={singleItemStyle} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+        <Scene key="splash" component={Splash} hideNavBar initial />
+          <Scene key="singleItem" component={SingleItem} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="webview" component={WebViewComponent} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="prevention" component={Prevention} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="risk" component={Risk} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
@@ -48,7 +50,6 @@ const App = () => {
             tabBarPosition="bottom"
             tabBarStyle={{ paddingTop: 3 }}
             hideNavBar
-            initial
           >
             <Scene key="home" component={Home} icon={TabIcon} iconName="home" tabBarLabel="Home" hideNavBar={true} />
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />
