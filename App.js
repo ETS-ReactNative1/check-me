@@ -22,6 +22,7 @@ import Prevention from './src/container/prevention/prevention';
 import Risk from './src/container/risk/risk';
 import Support from './src/container/support/support';
 import Splash from './src/container/splash/splash';
+import OnboardingComponent from './src/container/onboarding/onboarding';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
@@ -37,7 +38,8 @@ const App = () => {
     <>
       <Router>
         <Stack key="root">
-        <Scene key="splash" component={Splash} hideNavBar initial />
+          <Scene key="splash" component={Splash} hideNavBar />
+          <Scene key="onboarding" component={OnboardingComponent} hideNavBar initial />
           <Scene key="singleItem" component={SingleItem} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="webview" component={WebViewComponent} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="prevention" component={Prevention} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />

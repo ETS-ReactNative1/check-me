@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     View,
     Text,
@@ -50,15 +50,15 @@ function Symptoms() {
     }));
     const dispatch = useDispatch();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         dispatch(getNews());
-    }, [dispatch]);
+    });
 
     return (
         <View style={symptomsStyle.background}>
             {
                 newsList === null ?
-                    <View style={symptomsStyle.refresh}>
+                    <View style={symptomsStyle.refreshLoader}>
                         <ActivityIndicator size="large" color={theme.primary} />
                     </View>
                     :
