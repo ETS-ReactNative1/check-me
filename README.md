@@ -4,6 +4,14 @@ It also provides services such as latest news on COVID-19 gotten from https://ne
 in fighting coronavirus in Cameroon.
 
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cressence/images/master/home.png" width="150" title="app screens">
+  <img src="https://raw.githubusercontent.com/Cressence/images/master/more-info.png" width="150" alt="app screens">
+  <img src="https://raw.githubusercontent.com/Cressence/images/master/news.png" width="150" alt="app screens">
+  <img src="https://raw.githubusercontent.com/Cressence/images/master/contact.png" width="150" alt="app screens">
+  <img src="https://raw.githubusercontent.com/Cressence/images/master/statistics.png" width="150" alt="app screens">  
+</p>
+
 
 ## Getting Started
 To run COVID-KNOW locally, clone this repository and follow the stetps below.
