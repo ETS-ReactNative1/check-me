@@ -6,7 +6,6 @@ const symptomsStyle = StyleSheet.create({
     background: {
         flex: 1,
         backgroundColor: theme.light_grey,
-        paddingTop: 20,
     },
     mainTitle: {
         color: theme.primary,
@@ -19,7 +18,7 @@ const symptomsStyle = StyleSheet.create({
         backgroundColor: theme.white,
         marginHorizontal: 9,
         marginVertical: 7,
-        height: 150,
+        height: 130,
         display: 'flex',
         flexDirection: 'row',
     },
@@ -55,6 +54,10 @@ const symptomsStyle = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '40%',
+    },
+    upperSection: {
+        backgroundColor: theme.white,
+        paddingTop: 20,
     },
 });
 

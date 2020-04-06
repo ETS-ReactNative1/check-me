@@ -1,6 +1,6 @@
 export function trunc(text) {
     if (text !== null) {
-        return text.length > 75 ? `${text.substr(0, 75)}...` : text;
+        return text.length > 90 ? `${text.substr(0, 90)}...` : text;
     } else{
         return '';
     }

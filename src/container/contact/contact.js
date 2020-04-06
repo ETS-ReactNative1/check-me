@@ -49,7 +49,7 @@ function Contact() {
                     :
                     <ScrollView>
                         <Text style={contactStyle.title}>{helpData.help_title}</Text>
-                        <Image style={contactStyle.logoImg} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/help.png' }} />
+                        {/* <Image style={contactStyle.logoImg} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/help.png' }} /> */}
                         <View style={contactStyle.helpCard}>
                             <View style={contactStyle.helpTopSection}>
                                 <Text style={contactStyle.helpTopTitle}>{helpData.emergency.title}</Text>

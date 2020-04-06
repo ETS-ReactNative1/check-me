@@ -63,7 +63,9 @@ function Symptoms() {
                     </View>
                     :
                     <View>
-                        <Text style={symptomsStyle.mainTitle}>Trending News on Coronavirus</Text>
+                        <View style={symptomsStyle.upperSection}>
+                            <Text style={symptomsStyle.mainTitle}>Trending News on Coronavirus</Text>
+                        </View>
                         <ScrollView>
                             {
                                 newsList.map((item, index) => {
