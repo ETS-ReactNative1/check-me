@@ -24,7 +24,7 @@ const preventionStyle = StyleSheet.create({
     subheading: {
         fontSize: theme.text14,
         fontFamily: 'Roboto-Bold',
-        marginVertical: 5,
+        marginVertical: 7,
     },
     learnContainer: {
         backgroundColor: theme.primary,

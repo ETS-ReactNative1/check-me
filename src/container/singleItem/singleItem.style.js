@@ -14,7 +14,7 @@ const singleItemStyle = StyleSheet.create({
         height: 150,
         resizeMode: "cover",
         alignSelf: 'center',
-        marginBottom: 15,
+        marginBottom: 5,
     },
     description: {
         fontSize: fontTheme.text14,
@@ -33,7 +33,13 @@ const singleItemStyle = StyleSheet.create({
     subheading: {
         fontSize: theme.text14,
         fontFamily: 'Roboto-Bold',
-        marginVertical: 5,
+        textAlign: 'center',
+    },
+    verticalAlignment: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginBottom: 30,
     },
 });
 

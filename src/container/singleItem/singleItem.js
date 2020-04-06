@@ -35,30 +35,38 @@ function SingleItem(props) {
                     }
                 </View>
                 <Text style={singleItemStyle.common}>{data.common_title}</Text>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_one}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/fever.png'}} />
+                <View style={singleItemStyle.verticalAlignment}>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/fever.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_one}</Text>
+                    </View>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_two}</Text>
+                    </View>
                 </View>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_two}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/tiredness.png'}} />
+                <View style={singleItemStyle.verticalAlignment}>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/cough.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_three}</Text>
+                    </View>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/shortness.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_four}</Text>
+                    </View>
                 </View>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_three}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/cough.png'}} />
+
+                <View style={singleItemStyle.verticalAlignment}>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/pain.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_five}</Text>
+                    </View>
+                    <View>
+                        <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/sore.png' }} />
+                        <Text style={singleItemStyle.subheading}>{data.symptom_six}</Text>
+                    </View>
                 </View>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_four}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/shortness.png'}} />
-                </View>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_five}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/pain.png'}} />
-                </View>
-                <View>
-                    <Text style={singleItemStyle.subheading}>{data.symptom_six}</Text>
-                    <Image style={singleItemStyle.cardRightSide} source={{uri: 'https://raw.githubusercontent.com/Cressence/images/master/sore.png'}} />
-                </View>
+
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_seven}</Text>
                 </View>

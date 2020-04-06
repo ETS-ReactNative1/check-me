@@ -20,8 +20,6 @@ const riskStyle = StyleSheet.create({
     },
     points: {
         marginVertical: 10,
-        display: 'flex',
-        flexDirection: 'row',
     },
     subheading: {
         fontSize: theme.text14,
@@ -30,10 +28,14 @@ const riskStyle = StyleSheet.create({
     },
     learnContainer: {
         marginVertical: 5,
-        marginLeft: '10%',
+        backgroundColor: theme.primary,
+        paddingVertical: 2,
+        width: 90,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     learnText: {
-        color: theme.primary,
+        color: theme.white,
         textDecorationColor: theme.primary,
     },
 });

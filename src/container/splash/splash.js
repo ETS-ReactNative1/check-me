@@ -43,8 +43,6 @@ function Risk() {
 
     useEffect(() => {
         checkFirstTime();
-        // setTimeout(() => Actions.onboarding(), 3000);
-
     });
     return (
         <View style={splashStyle.background}>
