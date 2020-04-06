@@ -38,7 +38,7 @@ const App = () => {
     <>
       <Router>
         <Stack key="root">
-          <Scene key="splash" component={Splash} hideNavBar />
+          <Scene key="splash" component={Splash} hideNavBar initial />
           <Scene key="onboarding" component={OnboardingComponent} hideNavBar />
           <Scene key="singleItem" component={SingleItem} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="webview" component={WebViewComponent} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
@@ -52,7 +52,6 @@ const App = () => {
             tabBarPosition="bottom"
             tabBarStyle={{ paddingTop: 3 }}
             hideNavBar
-            initial
           >
             <Scene key="home" component={Home} icon={TabIcon} iconName="home" tabBarLabel="Home" hideNavBar={true} />
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />

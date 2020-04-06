@@ -27,9 +27,10 @@ const statistics = (state = initialState, action) => {
             }
         }
         case COUNTRIES: {
+            const realData = action.data.sort((first, second) => first.country.localeCompare(second.country));
             return {
                 ...state,
-                countryStat: action.data
+                countryStat: realData
             }
         }
         case API_FAIL: {

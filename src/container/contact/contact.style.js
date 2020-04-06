@@ -17,7 +17,7 @@ const contactStyle = StyleSheet.create({
     title: {
         textAlign: 'center',
         fontSize: fontTheme.text20,
-        marginTop: 50,
+        marginVertical: 20,
         marginBottom: 10,
         color: theme.primary,
     },
@@ -61,6 +61,10 @@ const contactStyle = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    upperSection: {
+        backgroundColor: theme.white,
+        paddingVertical: 20,
     },
 });
 

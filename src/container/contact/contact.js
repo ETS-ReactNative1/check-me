@@ -48,7 +48,9 @@ function Contact() {
                     </View>
                     :
                     <ScrollView>
-                        <Text style={contactStyle.title}>{helpData.help_title}</Text>
+                        <View style={contactStyle.upperSection}>
+                            <Text style={contactStyle.title}>{helpData.help_title}</Text>
+                        </View>
                         {/* <Image style={contactStyle.logoImg} source={{ uri: 'https://raw.githubusercontent.com/Cressence/images/master/help.png' }} /> */}
                         <View style={contactStyle.helpCard}>
                             <View style={contactStyle.helpTopSection}>
@@ -78,7 +80,7 @@ function Contact() {
                                 <Text style={contactStyle.helpDesc}>{helpData.mini_health.description}</Text>
                                 <View style={contactStyle.numberSection}>
                                     <Text style={contactStyle.sos}>{helpData.mini_health.title}</Text>
-                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.mini_health.link })}>
+                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.mini_health.link, title: helpData.mini_health.title })}>
                                         <Icon name="globe" size={30} color={theme.primary} />
                                     </TouchableOpacity>
                                 </View>
@@ -92,7 +94,7 @@ function Contact() {
                                 <Text style={contactStyle.helpDesc}>{helpData.who.description}</Text>
                                 <View style={contactStyle.numberSection}>
                                     <Text style={contactStyle.sos}>{helpData.who.title}</Text>
-                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.who.link })}>
+                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.who.link, title: helpData.who.title })}>
                                         <Icon name="globe" size={30} color={theme.primary} />
                                     </TouchableOpacity>
                                 </View>
@@ -106,7 +108,7 @@ function Contact() {
                                 <Text style={contactStyle.helpDesc}>{helpData.cdc.description}</Text>
                                 <View style={contactStyle.numberSection}>
                                     <Text style={contactStyle.sos}>{helpData.cdc.title}</Text>
-                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.cdc.link })}>
+                                    <TouchableOpacity onPress={() => Actions.webview({ url: helpData.cdc.link, title: helpData.cdc.title })}>
                                         <Icon name="globe" size={30} color={theme.primary} />
                                     </TouchableOpacity>
                                 </View>
