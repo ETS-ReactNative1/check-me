@@ -6,6 +6,7 @@ const symptomsStyle = StyleSheet.create({
     background: {
         flex: 1,
         backgroundColor: theme.light_grey,
+        paddingBottom: 100,
     },
     mainTitle: {
         color: theme.primary,

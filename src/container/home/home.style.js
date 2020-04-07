@@ -9,6 +9,7 @@ const homeStyle = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         width: '100%',
+        paddingBottom: 5,
     },
     titleText: {
         color: theme.white,

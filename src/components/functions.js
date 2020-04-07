@@ -1,6 +1,6 @@
 export function trunc(text) {
     if (text !== null) {
-        return text.length > 90 ? `${text.substr(0, 90)}...` : text;
+        return text.length > 50 ? `${text.substr(0, 50)}...` : text;
     } else{
         return '';
     }
@@ -8,7 +8,7 @@ export function trunc(text) {
 
 export function truncTitle(text) {
     if (text !== null) {
-        return text.length > 55 ? `${text.substr(0, 55)}...` : text;
+        return text.length > 50 ? `${text.substr(0, 50)}...` : text;
     } else{
         return '';
     }

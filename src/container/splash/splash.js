@@ -23,7 +23,7 @@ function Risk() {
         try {
             const value = await AsyncStorage.getItem('first-time')
             if(value !== null) {
-                setTimeout(() => Actions.home(), 3000);
+                setTimeout(() => Actions.home(), 2000);
             } else {
                 storeFirstTime();
                 setTimeout(() => Actions.onboarding(), 3000);
