@@ -70,6 +70,7 @@ function SingleItem(props) {
                 <View>
                     <Text style={singleItemStyle.subheading}>{data.symptom_seven}</Text>
                 </View>
+                <Image style={singleItemStyle.cardRightSide} source={{ uri: 'https://www.afro.who.int/sites/default/files/Coronavirus%20Social%20media%20cards/Facebook/2.png' }} />
             </ScrollView>
         </View>
     );
