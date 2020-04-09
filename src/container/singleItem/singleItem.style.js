@@ -16,6 +16,11 @@ const singleItemStyle = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 5,
     },
+    otherImage: {
+        width: '100%',
+        resizeMode: "cover",
+        alignSelf: 'center',
+    },
     description: {
         fontSize: fontTheme.text14,
         fontFamily: 'Roboto-Regular',

@@ -50,7 +50,7 @@ function Home() {
                     </View>
                     :
                     <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
-                        <Text style={homeStyle.titleText}>Be informed on the best way to protect yourself from Coronavirus</Text>
+                        <Text style={homeStyle.titleText}>{homeData['home-title']}</Text>
                         <ScrollView
                             style={homeStyle.cardScrollSection}
                         >

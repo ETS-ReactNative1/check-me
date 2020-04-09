@@ -34,6 +34,7 @@ const TabIcon = (props) => {
 }
 
 const App = () => {
+  
   return (
     <>
       <Router>
@@ -58,6 +59,7 @@ const App = () => {
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />
             <Scene key="help" component={Contact} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
             <Scene key="statistics" component={Statistics} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
+            <Scene key="flag" component={Statistics} icon={TabIcon} iconName="flag" tabBarLabel="English" hideNavBar={true} />
           </Scene>
         </Stack>
       </Router>
