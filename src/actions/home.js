@@ -1,5 +1,5 @@
 import {
-    HOME, API_FAIL, RESET_HOME
+    HOME, API_FAIL
 } from './../constants/constant';
 import { URL } from './../components/config';
 

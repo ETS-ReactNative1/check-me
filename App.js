@@ -7,7 +7,7 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View } from 'react-native';
+import { View, Modal } from 'react-native';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -23,12 +23,13 @@ import Risk from './src/container/risk/risk';
 import Support from './src/container/support/support';
 import Splash from './src/container/splash/splash';
 import OnboardingComponent from './src/container/onboarding/onboarding';
+import Language from './src/container/language/language';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
   return (
     <View style={{ flex: 1, flexDirection: 'column', alignSelf: 'center', marginTop: 5 }}>
-      <Icon name={props.iconName} size={23} color={color} />
+      <Icon name={props.iconName} size={21} color={color} />
     </View>
   )
 }
@@ -59,7 +60,7 @@ const App = () => {
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />
             <Scene key="help" component={Contact} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
             <Scene key="statistics" component={Statistics} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
-            <Scene key="flag" component={Statistics} icon={TabIcon} iconName="flag" tabBarLabel="English" hideNavBar={true} />
+            <Scene key="flag" component={Language} icon={TabIcon} iconName="flag" tabBarLabel="Language" hideNavBar={true} />
           </Scene>
         </Stack>
       </Router>
