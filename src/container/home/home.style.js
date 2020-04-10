@@ -17,7 +17,7 @@ const homeStyle = StyleSheet.create({
         fontSize: 20,
         marginLeft: '30%',
         marginRight: '5%',
-        marginTop: '30%',
+        marginTop: '15%',
         fontFamily: 'Roboto-Regular',
     },
     cardSection: {
@@ -55,6 +55,11 @@ const homeStyle = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    language: {
+        textAlign: 'right',
+        marginTop: 50,
+        marginRight: '5%',
     },
 });
 

@@ -16,8 +16,10 @@ import {
     TouchableOpacity,
     ActivityIndicator,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
 import { useDispatch, useSelector } from "react-redux";
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { getHomeData, resetHomeData } from './../../actions/home';
 import { trunc } from './../../components/functions';
@@ -50,6 +52,7 @@ function Home() {
                     </View>
                     :
                     <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
+                        <Icon style={homeStyle.language} name="language" size={27} color="white" />
                         <Text style={homeStyle.titleText}>{homeData['home-title']}</Text>
                         <ScrollView
                             style={homeStyle.cardScrollSection}
