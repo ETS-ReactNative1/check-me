@@ -47,6 +47,7 @@ const App = () => {
           <Scene key="prevention" component={Prevention} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="risk" component={Risk} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
           <Scene key="support" component={Support} navigationBarStyle={{ backgroundColor: theme.primary }} navBarButtonColor={theme.white} />
+          {/* <Scene key="flag" component={Language} icon={TabIcon} iconName="flag" tabBarLabel="Language" hideNavBar={true} /> */}
           <Scene
             key="mainScreens"
             tabs={true}
@@ -60,7 +61,6 @@ const App = () => {
             <Scene key="test" component={Symptoms} icon={TabIcon} iconName="tv" tabBarLabel="News" hideNavBar={true} />
             <Scene key="help" component={Contact} icon={TabIcon} iconName="medkit" tabBarLabel="Help" hideNavBar={true} />
             <Scene key="statistics" component={Statistics} icon={TabIcon} iconName="globe" tabBarLabel="Statistics" hideNavBar={true} />
-            <Scene key="flag" component={Language} icon={TabIcon} iconName="flag" tabBarLabel="Language" hideNavBar={true} />
           </Scene>
         </Stack>
       </Router>

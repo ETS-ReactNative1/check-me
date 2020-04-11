@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import {
     ScrollView,
     ImageBackground,
@@ -24,6 +24,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { getHomeData, resetHomeData } from './../../actions/home';
 import { trunc } from './../../components/functions';
 
+import Language from './../language/language';
 import homeStyle from './home.style';
 import theme from './../../assets/theme/color';
 
@@ -34,6 +35,8 @@ function Home() {
         homeData: state.home.homePage,
     }));
     const dispatch = useDispatch();
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     handleRefresh = () => {
         dispatch(resetHomeData());
@@ -52,8 +55,15 @@ function Home() {
                     </View>
                     :
                     <ImageBackground source={require('./../../assets/images/background.png')} style={homeStyle.backgroundImage}>
-                        <Icon style={homeStyle.language} name="language" size={27} color="white" />
+                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                            <Icon style={homeStyle.language} name="language" size={27} color="white" />
+                        </TouchableOpacity>
                         <Text style={homeStyle.titleText}>{homeData['home-title']}</Text>
+                        {
+                            console.log(modalVisible)
+                            // modalVisible ? <Language setVisibility={() => setModalVisible(!modalVisible)} /> : null
+                        }
+
                         <ScrollView
                             style={homeStyle.cardScrollSection}
                         >
