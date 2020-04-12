@@ -4,7 +4,7 @@ import {
 import { URL, STATS } from './../components/config';
 
 function getStatisticsDataPromise(language) {
-    return fetch(`${URL}/statistics?lang=${language}`)
+    return fetch(`${URL}/statistics?lng=${language}`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());

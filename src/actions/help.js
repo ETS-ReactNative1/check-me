@@ -4,8 +4,8 @@ import {
 import { URL } from './../components/config';
 
 function getHelpDataPromise(language) {
-    console.log(`${URL}/help?lang=${language}`)
-    return fetch(`${URL}/help?lang=${language}`)
+    console.log(`${URL}/help?lng=${language}`)
+    return fetch(`${URL}/help?lng=${language}`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());
