@@ -6,12 +6,11 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     ScrollView,
     View,
     Text,
-    Image,
     Linking,
     TouchableOpacity,
     ActivityIndicator,
@@ -19,6 +18,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from 'react-native-router-flux';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import theme from './../../assets/theme/color';
 import contactStyle from './contact.style';
@@ -28,6 +28,19 @@ const makeCall = (numnber) => {
     Linking.openURL(`tel:${numnber}`);
 }
 
+async function _retrieveData() {
+    try {
+        const value = await AsyncStorage.getItem('language');
+        if (value !== null) {
+            return value;
+        } else {
+            return 'en';
+        }
+    } catch (error) {
+        Alert.alert('Error', error);
+    }
+};
+
 function Contact() {
     const {
         helpData
@@ -36,8 +49,10 @@ function Contact() {
     }));
     const dispatch = useDispatch();
 
-    useLayoutEffect(() => {
-        dispatch(getHelpData());
+    useEffect(() => {
+        _retrieveData().then((val) => {
+            dispatch(getHelpData(val));
+        });
     }, [dispatch]);
     return (
         <View style={contactStyle.background}>

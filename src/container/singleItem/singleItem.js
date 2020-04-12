@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     ScrollView,
     View,
@@ -17,7 +17,7 @@ import {
 import singleItemStyle from './singleItem.style';
 
 function SingleItem(props) {
-    useLayoutEffect(() => {
+    useEffect(() => {
         props.navigation.setParams({
             title: props.symptoms.title,
         })

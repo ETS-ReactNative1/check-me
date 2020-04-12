@@ -6,62 +6,77 @@
  * @flow
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Modal,
     View,
     Text,
-    TouchableHighlight,
+    TouchableOpacity,
     Image,
 } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import { Actions } from 'react-native-router-flux';
 
 import languageStyle from './language.style';
 
+const _storeData = async (data) => {
+    try {
+        await AsyncStorage.setItem('language', data)
+        .then(val => {
+            Actions.mainScreens();
+        })
+        
+    } catch (error) {
+        Alert.alert('Error', error);
+    }
+};
+
 function Language(props) {
-    // const [modalVisible, setModalVisible] = useState(false);
-    console.log(props.visibility)
     return (
         <Modal
             animationType="slide"
             transparent={true}
-            visible={true}
-            // onRequestClose={() => props.setVisibility}
+            visible={props.visibility}
+            onRequestClose={props.setVisibility}
         >
             <View style={languageStyle.Modalbody}>
                 <View style={languageStyle.modalView}>
                     <Text style={languageStyle.modalText}>Select a language</Text>
 
-                    <TouchableHighlight
-                        // style={languageStyle.languageItem}
+                    <TouchableOpacity
                         onPress={() => {
-                            props.setVisibility;
+                            _storeData('en');
+                            props.setVisibility();
+                            Actions.refresh({ key: 'mainScreens'});
                         }}
                     >
                         <View style={languageStyle.languageHorizontal}>
                             <Image style={languageStyle.flag} source={require('./../../assets/images/english.jpg')} />
                             <Text style={languageStyle.textStyle}>English</Text>
                         </View>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        // style={languageStyle.languageItem}
+                    </TouchableOpacity>
+                    <TouchableOpacity
                         onPress={() => {
-                            setModalVisible(!modalVisible);
+                            _storeData('fr');
+                            props.setVisibility();
+                            Actions.refresh({ key: 'mainScreens'});
                         }}
                     >
                         <View style={languageStyle.languageHorizontal}>
                             <Image style={languageStyle.flag} source={require('./../../assets/images/french.png')} />
                             <Text style={languageStyle.textStyle}>French</Text>
                         </View>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
             </View>
         </Modal>
     );
 };
 
-Language.propTypes ={
-    setVisibility: PropTypes.func
+Language.propTypes = {
+    setVisibility: PropTypes.func,
+    visibility: PropTypes.bool
 };
 
 export default Language;

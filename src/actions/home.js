@@ -3,8 +3,8 @@ import {
 } from './../constants/constant';
 import { URL } from './../components/config';
 
-function getHomeDataPromise() {
-    return fetch(`${URL}/home`)
+function getHomeDataPromise(language) {
+    return fetch(`${URL}/home?lng=${language}`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());
@@ -19,8 +19,8 @@ function getHomeDataPromise() {
         });
 }
 
-export const getHomeData = () => (dispatch) => {
-    return getHomeDataPromise()
+export const getHomeData = (language) => (dispatch) => {
+    return getHomeDataPromise(language)
         .then(resp => dispatch({
             type: HOME,
             data: resp

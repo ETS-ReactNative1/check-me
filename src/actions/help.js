@@ -3,8 +3,9 @@ import {
 } from './../constants/constant';
 import { URL } from './../components/config';
 
-function getHelpDataPromise() {
-    return fetch(`${URL}/help`)
+function getHelpDataPromise(language) {
+    console.log(`${URL}/help?lang=${language}`)
+    return fetch(`${URL}/help?lang=${language}`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());
@@ -19,8 +20,8 @@ function getHelpDataPromise() {
         });
 }
 
-export const getHelpData = () => (dispatch) => {
-    return getHelpDataPromise()
+export const getHelpData = (language) => (dispatch) => {
+    return getHelpDataPromise(language)
         .then(resp => dispatch({
             type: HELP,
             data: resp

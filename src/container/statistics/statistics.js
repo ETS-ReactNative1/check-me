@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     ScrollView,
     View,
@@ -15,11 +15,25 @@ import {
     ActivityIndicator,
 } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { getStatisticsData, getCamerData, getWorldData } from './../../actions/statistics';
 
 import statisticsStyle from './statistics.style';
 import theme from './../../assets/theme/color';
+
+async function _retrieveData() {
+    try {
+        const value = await AsyncStorage.getItem('language');
+        if (value !== null) {
+            return value;
+        } else {
+            return 'en';
+        }
+    } catch (error) {
+        Alert.alert('Error', error);
+    }
+};
 
 function Statistics() {
     const {
@@ -31,8 +45,10 @@ function Statistics() {
     }));
     const dispatch = useDispatch();
 
-    useLayoutEffect(() => {
-        dispatch(getStatisticsData());
+    useEffect(() => {
+        _retrieveData().then((val) => {
+            dispatch(getStatisticsData(val));
+        });
         dispatch(getCamerData());
         dispatch(getWorldData());
     }, [dispatch]);

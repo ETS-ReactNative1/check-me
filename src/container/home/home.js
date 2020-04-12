@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     ScrollView,
     ImageBackground,
@@ -28,6 +28,19 @@ import Language from './../language/language';
 import homeStyle from './home.style';
 import theme from './../../assets/theme/color';
 
+async function _retrieveData() {
+    try {
+        const value = await AsyncStorage.getItem('language');
+        if (value !== null) {
+            return value;
+        } else {
+            return 'en';
+        }
+    } catch (error) {
+        Alert.alert('Error', error);
+    }
+};
+
 function Home() {
     const {
         homeData
@@ -43,8 +56,10 @@ function Home() {
         dispatch(getHomeData());
     }
 
-    useLayoutEffect(() => {
-        dispatch(getHomeData());
+    useEffect(() => {
+        _retrieveData().then((val) => {
+            dispatch(getHomeData(val));
+        });
     }, [dispatch]);
     return (
         <View style={homeStyle.background}>
@@ -59,10 +74,7 @@ function Home() {
                             <Icon style={homeStyle.language} name="language" size={27} color="white" />
                         </TouchableOpacity>
                         <Text style={homeStyle.titleText}>{homeData['home-title']}</Text>
-                        {
-                            console.log(modalVisible)
-                            // modalVisible ? <Language setVisibility={() => setModalVisible(!modalVisible)} /> : null
-                        }
+                        <Language visibility={modalVisible} setVisibility={() => setModalVisible(false)} />
 
                         <ScrollView
                             style={homeStyle.cardScrollSection}

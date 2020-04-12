@@ -3,8 +3,8 @@ import {
 } from './../constants/constant';
 import { URL, STATS } from './../components/config';
 
-function getStatisticsDataPromise() {
-    return fetch(`${URL}/statistics`)
+function getStatisticsDataPromise(language) {
+    return fetch(`${URL}/statistics?lang=${language}`)
         .then(data => {
             return new Promise(resolve => {
                 resolve(data.json());
@@ -19,8 +19,8 @@ function getStatisticsDataPromise() {
         });
 }
 
-export const getStatisticsData = () => (dispatch) => {
-    return getStatisticsDataPromise()
+export const getStatisticsData = (language) => (dispatch) => {
+    return getStatisticsDataPromise(language)
         .then(resp => dispatch({
             type: STATISTICS,
             data: resp

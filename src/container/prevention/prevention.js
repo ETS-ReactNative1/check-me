@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     ScrollView,
     View,
@@ -18,7 +18,7 @@ import { Actions } from 'react-native-router-flux';
 import preventionStyle from './prevention.style';
 
 function Prevention(props) {
-    useLayoutEffect(() => {
+    useEffect(() => {
         props.navigation.setParams({
             title: props.prevention.title,
         })

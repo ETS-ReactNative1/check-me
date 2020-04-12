@@ -6,10 +6,11 @@
  * @flow
  */
 import 'react-native-gesture-handler';
-import React from 'react';
-import { View, Modal } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Alert } from 'react-native';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Home from './src/container/home/home';
 import theme from './src/assets/theme/color';
@@ -23,7 +24,6 @@ import Risk from './src/container/risk/risk';
 import Support from './src/container/support/support';
 import Splash from './src/container/splash/splash';
 import OnboardingComponent from './src/container/onboarding/onboarding';
-import Language from './src/container/language/language';
 
 const TabIcon = (props) => {
   var color = props.focused ? theme.primary : 'grey';
@@ -34,8 +34,36 @@ const TabIcon = (props) => {
   )
 }
 
-const App = () => {
-  
+const _storeData = async () => {
+  try {
+    await AsyncStorage.setItem('language', 'en');
+    console.log('data')
+  } catch (error) {
+    Alert.alert('Error', error);
+  }
+};
+
+const _retrieveData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('language');
+    if (value === null) {
+      // We have data!!
+      return await AsyncStorage.setItem('language', 'en');
+    } else {
+      return value;
+    }
+  } catch (error) {
+    Alert.alert('Error', error);
+  }
+};
+
+function App() {
+
+  useEffect(() => {
+    // _retrieveData();
+    _storeData()
+  }, []);
+
   return (
     <>
       <Router>
