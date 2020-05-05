@@ -12,6 +12,9 @@ in fighting coronavirus in Cameroon.
   <img src="https://raw.githubusercontent.com/Cressence/images/master/statistics.png" width="150" alt="app screens">  
 </p>
 
+### Video link
+<p> https://youtu.be/fc4kOjhKvno </p>
+
 
 ## Getting Started
 To run COVID-KNOW locally, clone this repository and follow the stetps below.
