@@ -1,8 +1,8 @@
-import {HOME, API_FAIL} from './../constants/constant';
+import {DISEASES, API_FAIL} from './../constants/constant';
 import {URL} from './../components/config';
 
-function getHomeDataPromise(language) {
-  return fetch(`${URL}/home?lng=${language}`)
+function getDeseasesPromise(language) {
+  return fetch(`${URL}/diseases?lng=${language}`)
     .then(data => {
       return new Promise(resolve => {
         resolve(data.json());
@@ -16,11 +16,11 @@ function getHomeDataPromise(language) {
     });
 }
 
-export const getHomeData = language => dispatch => {
-  return getHomeDataPromise(language)
+export const getDeseases = language => dispatch => {
+  return getDeseasesPromise(language)
     .then(resp =>
       dispatch({
-        type: HOME,
+        type: DISEASES,
         data: resp,
       }),
     )
@@ -31,10 +31,3 @@ export const getHomeData = language => dispatch => {
       }),
     );
 };
-
-// export const resetHomeData = () => (dispatch) => {
-//     dispatch({
-//         type: RESET_HOME,
-//         data: null
-//     })
-// };
