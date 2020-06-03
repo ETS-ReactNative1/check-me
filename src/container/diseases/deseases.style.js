@@ -38,6 +38,8 @@ const deseaseStyle = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 1.5,
+    borderBottomColor: theme.primary,
+    borderBottomWidth: 1,
   },
   diseaseName: {
     fontSize: fontTheme.text14,

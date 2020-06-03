@@ -42,9 +42,10 @@ async function _retrieveData() {
   }
 }
 
-function Home() {
-  const {homeData} = useSelector(state => ({
+function Home(props) {
+  const {homeData, selectedDisease} = useSelector(state => ({
     homeData: state.home.homePage,
+    selectedDisease: state.deseases.mainDisease,
   }));
   const dispatch = useDispatch();
 
@@ -60,6 +61,7 @@ function Home() {
       dispatch(getHomeData(val));
     });
   }, [dispatch]);
+  console.log(selectedDisease);
   return (
     <View style={homeStyle.background}>
       {homeData === null ? (
@@ -70,7 +72,15 @@ function Home() {
         <ImageBackground
           source={require('./../../assets/images/background.png')}
           style={homeStyle.backgroundImage}>
-          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+          {/* <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <Icon
+              style={homeStyle.language}
+              name="language"
+              size={27}
+              color="white"
+            />
+          </TouchableOpacity> */}
+          <TouchableOpacity onPress={() => Actions.deseases()}>
             <Icon
               style={homeStyle.language}
               name="language"

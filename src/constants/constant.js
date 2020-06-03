@@ -6,4 +6,5 @@ export const COUNTRIES = 'COUNTRIES';
 export const NEWS = 'NEWS';
 export const RESET_HOME = 'RESET_HOME';
 export const DISEASES = 'DISEASES';
+export const DISEASE = 'DISEASE';
 export const API_FAIL = 'API_FAIL';

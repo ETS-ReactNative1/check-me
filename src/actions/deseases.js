@@ -1,4 +1,4 @@
-import {DISEASES, API_FAIL} from './../constants/constant';
+import {DISEASES, DISEASE, API_FAIL} from './../constants/constant';
 import {URL} from './../components/config';
 
 function getDeseasesPromise(language) {
@@ -30,4 +30,18 @@ export const getDeseases = language => dispatch => {
         data: resp,
       }),
     );
+};
+
+export const setDesease = disease => dispatch => {
+  dispatch({
+    type: DISEASE,
+    data: disease,
+  });
+};
+
+export const changeDesease = () => dispatch => {
+  dispatch({
+    type: DISEASE,
+    data: null,
+  });
 };

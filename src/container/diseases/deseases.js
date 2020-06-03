@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import {getDeseases} from './../../actions/deseases';
+import {getDeseases, setDesease} from './../../actions/deseases';
 
 import deseaseStyle from './deseases.style';
 import theme from './../../assets/theme/color';
@@ -35,6 +35,10 @@ function Deseases() {
   }));
 
   const dispatch = useDispatch();
+  const selectDisease = item => {
+    setDesease(item);
+    Actions.mainScreens();
+  };
   useEffect(() => {
     dispatch(getDeseases('en'));
   }, [dispatch]);
@@ -42,7 +46,7 @@ function Deseases() {
     <View style={deseaseStyle.background}>
       <Text style={deseaseStyle.title}>DISEASES</Text>
       <Text style={deseaseStyle.subTitle}>
-        Select a disease to get informed on how to stay safe.
+        Select a disease to get more information.
       </Text>
       {deseasesData === null ? (
         <View style={deseaseStyle.refresh}>
@@ -59,6 +63,7 @@ function Deseases() {
             return (
               <TouchableOpacity
                 key={item.id}
+                onPress={() => selectDisease(item)}
                 style={deseaseStyle.diseaseContainer}>
                 <Text style={deseaseStyle.diseaseName}>
                   {strimName(item.name)}
